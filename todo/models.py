@@ -16,6 +16,7 @@ class Item(models.Model):
     name = models.CharField(max_length=50, null=False, blank=False)
     done = models.BooleanField(null=False, blank=False, default=False)
 
+
     def __str__(self):
         ''' Override default to return item name instead of primary key.'''
         return self.name
