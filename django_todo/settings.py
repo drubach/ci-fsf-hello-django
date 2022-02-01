@@ -10,9 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
 from pathlib import Path
+import os
 import dj_database_url
+if os.path.exists("env.py"):
+    import env
 
 development = os.environ.get('DEVELOPMENT', False)
 
@@ -29,7 +31,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-snld-f0mcu$((2)hj(s)k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+if development=='True':
+    ALLOWED_HOSTS = ['127.0.0.1']
+else:
+    ALLOWED_HOSTS = [os.environ.get("HEROKU_HOSTNAME")]
 
 
 # Application definition
@@ -78,7 +83,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if development:
+if development=='True':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
