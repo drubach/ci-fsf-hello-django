@@ -35,7 +35,7 @@ DEBUG = development
 #     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # else:
 #     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-ALLOWED_HOSTS = ['https://rubac-django-todo-app.herokuapp.com/', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['https://rubac-django-todo-app.herokuapp.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
