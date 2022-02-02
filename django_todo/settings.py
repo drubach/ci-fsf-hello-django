@@ -31,11 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-if development=='True':
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-else:
-    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
-
+# if development=='True':
+#     ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+# else:
+#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+ALLOWED_HOSTS = ['HEROKU_HOSTNAME', 'localhost', '127.0.0.1']
 
 # Application definition
 
